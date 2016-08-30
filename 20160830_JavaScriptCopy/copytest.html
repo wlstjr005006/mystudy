@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+  // 숫자형
+  // var testA = 0;
+  // var testB = testA;
+  // testB = 1;
+
+  // console.log('testA',testA);
+  // console.log('testA type : ',typeof testA);
+  // console.log('testB',testB);
+  // console.log('testB type : ',typeof testB);
+
+
+
+  // 문자형
+  // var testA = '테스트';
+  // var testB = testA;
+  // testB = 'hello world';
+  //
+  // console.log('testA',testA);
+  // console.log('testA type : ',typeof testA);
+  // console.log('testB',testB);
+  // console.log('testB type : ',typeof testB);
+
+
+
+  // 함수
+  // var testA = function(str=0){alert(str)};
+  // testB = testA;
+  // testB = function(abc=0){alert(abc)};
+  //
+  // console.log('testA',testA);
+  // console.log('testA type : ',typeof testA);
+  // console.log('testB',testB);
+  // console.log('testB type : ',typeof testB);
+
+
+
+  // 배열 (obj)
+  // var testA = [0,1,2,3,4];
+  // testB = testA;
+  // testB[0] = '테스트';
+  //
+  // console.log('testA',testA);
+  // console.log('testA type : ',typeof testA);
+  // console.log('testB',testB);
+  // console.log('testB type : ',typeof testB);
+
+
+
+  // 오브젝트
+  // var testA = {
+  //   'A' : 0,
+  //   'B' : '테스트',
+  //   'C' : new Date('2016-08-30 12:30:00'),
+  //   'D' : function(){alert('test')},
+  //   'E' : [0,1,2,3,4],
+  //   'F' : {
+  //     'FA' : 1
+  //   }
+  // }
+  // var testB = testA;
+  // // var testB = Object.assign({},testA);
+  // // // // var testB = Object.assign({},testA.F);
+  // testB.A = '테스트';
+  // // // testB.F.FA = '테스트';
+  //
+  // console.log('testA',testA);
+  // console.log('testA type : ',typeof testA);
+  // console.log('testB',testB);
+  // console.log('testB type : ',typeof testB);
+
+
+
+  // 오브젝트의 얕은 복사-2
+  // function clone(obj) {
+  // 	if (obj === null || typeof(obj) !== 'object') // 타입이 object가 아닐경우는 바로 리턴
+  //   	return obj;
+  //
+  //   var copy = obj.constructor(); // obj의 타입을 새로운 변수의 타입으로 지정
+  //
+  //   for (var attr in obj) {
+  // 		if (obj.hasOwnProperty(attr)) {
+  //     	copy[attr] = obj[attr];
+  // 		}
+  //   }
+  //
+  //   return copy;
+  // }
+  //
+  // var testA = {
+  //   'A' : 0,
+  //   'B' : '테스트',
+  //   'C' : new Date('2016-08-30 12:30:00'),
+  //   'D' : function(){alert('test')},
+  //   'E' : [0,1,2,3,4],
+  //   'F' : {
+  //     'FA' : 1
+  //   }
+  // }
+  // var testB = clone(testA);
+  // testB.F.FA = 'other value';
+  //
+  // console.log('testA',testA);
+  // console.log('testA type : ',typeof testA);
+  // console.log('testB',testB);
+  // console.log('testB type : ',typeof testB);
+
+
+
+  // 오브젝트 얕은복사-3
+  // var testA = {
+  //   'A' : 0,
+  //   'B' : '테스트',
+  //   'C' : new Date('2016-08-30 12:30:00'),
+  //   'D' : function(){alert('test')},
+  //   'E' : [0,1,2,3,4],
+  //   'F' : {
+  //     'FA' : 1
+  //   }
+  // }
+  // var testB = $.extend({}, testA);
+  // testB.A = 'hello';
+  // testB.F.FA = 'other value';
+  //
+  // console.log('testA',testA);
+  // console.log('testA type : ',typeof testA);
+  // console.log('testB',testB);
+  // console.log('testB type : ',typeof testB);
+
+
+
+  // 오브젝트 얕은복사-4
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : new Date('2016-08-30 12:30:00'),
+    'D' : function(){alert('test')},
+    'E' : [0,1,2,3,4],
+    'F' : {
+      'FA' : 1
+    }
+  }
+  var testB = testA;
+  testB.A = 'hello';
+  testB.F.FA = 'other value';
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
+
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
