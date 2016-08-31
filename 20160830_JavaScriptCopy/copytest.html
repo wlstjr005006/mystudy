@@ -15,8 +15,8 @@
   testB = 1;
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
 
 
@@ -27,8 +27,20 @@
   testB = 'hello world';
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
+  console.log('testB type : ',typeof testB);
+
+
+
+  // true || false
+  var testA = true
+  var testB = testA;
+  testB = false;
+
+  console.log('testA',testA);
+  console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
 
 
@@ -39,8 +51,8 @@
   testB = function(abc=0){alert(abc)};
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
 
 
@@ -51,8 +63,8 @@
   testB[0] = '테스트';
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
 
 
@@ -66,14 +78,15 @@
     'E' : [0,1,2,3,4],
     'F' : {
       'FA' : 1
-    }
+    },
+    'G' : true
   }
   var testB = testA;
   testB.A = '테스트';
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
 
 
@@ -87,19 +100,18 @@
     'E' : [0,1,2,3,4],
     'F' : {
       'FA' : 1
-    }
+    },
+    'G' : true
   }
-  var testB = Object.assign({},testA);
+  var testB = Object.assign({},testA); // Object.assign이란 객체를 합병하여 복사시켜주는 내장함수
   // var testB = Object.assign({},testA.F);
   testB.A = '테스트';
   // testB.F.FA = 'other value';
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
-
-  Object.assign이란 객체를 합병하여 복사시켜주는 내장함수
 
 
 
@@ -111,11 +123,10 @@
     var copy = obj.constructor(); // obj의 타입을 새로운 변수의 타입으로 지정
 
     for (var attr in obj) {
-  		if (obj.hasOwnProperty(attr)) {
+  		if (obj.hasOwnProperty(attr)) { // object에 지정된 이름의 속성이 있을경우 true 아니면 false (객체 프로퍼티(속성) 존재 여부)
       	copy[attr] = obj[attr];
   		}
     }
-
     return copy;
   }
 
@@ -127,15 +138,16 @@
     'E' : [0,1,2,3,4],
     'F' : {
       'FA' : 1
-    }
+    },
+    'G' : true
   }
   var testB = clone(testA);
   testB.A = '테스트';
   // testB.F.FA = 'other value';
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
 
 
@@ -149,15 +161,16 @@
     'E' : [0,1,2,3,4],
     'F' : {
       'FA' : 1
-    }
+    },
+    'G' : true
   }
-  var testB = $.extend({}, testA);
+  var testB = $.extend({}, testA); // 객체를 합병 http://api.jquery.com/jQuery.extend/
   testB.A = '테스트';
   // testB.F.FA = 'other value';
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
 
 
@@ -171,43 +184,21 @@
     'E' : [0,1,2,3,4],
     'F' : {
       'FA' : 1
-    }
-  }
-  var testB = $.extend(true, {}, testA);
-  testB.A = '테스트';
-  testB.F.FA = 'other value';
-  testB.D();
-
-  console.log('testA',testA);
-  console.log('testA type : ',typeof testA.C);
-  console.log('testB',testB);
-  console.log('testB type : ',typeof testB.C);
-
-
-
-  // 오브젝트 깊은복사-2
-  var testA = {
-    'A' : 0,
-    'B' : '테스트',
-    'C' : new Date('2016-08-30 12:30:00'),
-    'D' : function(){alert('test')},
-    'E' : [0,1,2,3,4],
-    'F' : {
-      'FA' : 1
-    }
+    },
+    'G' : true
   }
   var testB = JSON.parse(JSON.stringify(testA));
   testB.A = '테스트';
   //testB.F.FA = 'other value';
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA.C);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA.C);
   console.log('testB type : ',typeof testB.C);
 
 
 
-  // 오브젝트 깊은복사-3
+  // 오브젝트 깊은복사-2
   function clone(obj) {
   	if (obj === null || typeof(obj) !== 'object') // 타입이 object가 아닐경우는 바로 리턴
     	return obj;
@@ -231,7 +222,8 @@
     'E' : [0,1,2,3,4],
     'F' : {
       'FA' : 1
-    }
+    },
+    'G' : true
   }
   var testB = clone(testA);
   testB.A = '테스트';
@@ -242,9 +234,34 @@
   // console.log('testC type : ',typeof testC);
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
+
+
+
+
+  // 오브젝트 깊은복사-3
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : new Date('2016-08-30 12:30:00'),
+    'D' : function(){alert('test')},
+    'E' : [0,1,2,3,4],
+    'F' : {
+      'FA' : 1
+    },
+    'G' : true
+  }
+  var testB = $.extend(true, {}, testA);
+  testB.A = '테스트';
+  testB.F.FA = 'other value';
+  testB.D();
+
+  console.log('testA',testA);
+  console.log('testB',testB);
+  console.log('testA type : ',typeof testA.C);
+  console.log('testB type : ',typeof testB.C);
 
 
 
@@ -257,7 +274,8 @@
     'E' : [0,1,2,3,4],
     'F' : {
       'FA' : 1
-    }
+    },
+    'G' : true
   }
   var testB = Object.clone(testA);
   testB.A = '테스트';
@@ -268,8 +286,8 @@
   // console.log('testC type : ',typeof testC);
 
   console.log('testA',testA);
-  console.log('testA type : ',typeof testA);
   console.log('testB',testB);
+  console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
 
 
