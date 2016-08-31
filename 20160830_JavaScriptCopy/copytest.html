@@ -103,7 +103,7 @@
     },
     'G' : true
   }
-  var testB = Object.assign({},testA); // Object.assign이란 객체를 합병하여 복사시켜주는 내장함수
+  var testB = Object.assign({},testA); // Object.assign이란 객체를 합병하여 복사시켜주는 내장함수 es6
   // var testB = Object.assign({},testA.F);
   testB.A = '테스트';
   // testB.F.FA = 'other value';
@@ -187,7 +187,7 @@
     },
     'G' : true
   }
-  var testB = JSON.parse(JSON.stringify(testA));
+  var testB = JSON.parse(JSON.stringify(testA)); // parse는 string을 json으로,  stringify는 json을 string으로
   testB.A = '테스트';
   //testB.F.FA = 'other value';
 
