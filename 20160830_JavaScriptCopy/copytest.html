@@ -5,269 +5,246 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="MooTools-Core-1.6.0.js"></script>
 <script>
+  // string, number, Boolean
+
+
+
   //숫자형
-  // var testA = 0;
-  // var testB = testA;
-  // testB = 1;
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB);
-  //
-  // -------------------------------------------
-  //
-  // testA 0
-  // testA type :  number
-  // testB 1
-  // testB type :  number
+  var testA = 0;
+  var testB = testA;
+  testB = 1;
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
 
 
 
   // 문자형
-  // var testA = '테스트';
-  // var testB = testA;
-  // testB = 'hello world';
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB);
-  //
-  // -------------------------------------------
-  //
-  // testA 테스트
-  // testA type :  string
-  // testB hello world
-  // testB type :  string
+  var testA = '테스트';
+  var testB = testA;
+  testB = 'hello world';
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
+
 
 
   // 함수
-  // var testA = function(str=0){alert(str)};
-  // testB = testA;
-  // testB = function(abc=0){alert(abc)};
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB);
-  //
-  // -------------------------------------------
-  //
-  // testA (str=0){alert(str)}
-  // testA type :  function
-  // testB (abc=0){alert(abc)}
-  // testB type :  function
+  var testA = function(str=0){alert(str)};
+  testB = testA;
+  testB = function(abc=0){alert(abc)};
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
 
 
 
   // 배열 (obj)
-  // var testA = [0,1,2,3,4];
-  // testB = testA;
-  // testB[0] = '테스트';
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB);
-  // //
-  // // -------------------------------------------
-  // //
-  // testA ["테스트", 1, 2, 3, 4]
-  // testA type :  object
-  // testB ["테스트", 1, 2, 3, 4]
-  // testB type :  object
+  var testA = [0,1,2,3,4];
+  testB = testA;
+  testB[0] = '테스트';
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
 
 
 
   // 오브젝트
-  // var testA = {
-  //   'A' : 0,
-  //   'B' : '테스트',
-  //   'C' : new Date('2016-08-30 12:30:00'),
-  //   'D' : function(){alert('test')},
-  //   'E' : [0,1,2,3,4],
-  //   'F' : {
-  //     'FA' : 1
-  //   }
-  // }
-  // var testB = testA;
-  // testB.A = '테스트';
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB);
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : new Date('2016-08-30 12:30:00'),
+    'D' : function(){alert('test')},
+    'E' : [0,1,2,3,4],
+    'F' : {
+      'FA' : 1
+    }
+  }
+  var testB = testA;
+  testB.A = '테스트';
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
 
 
 
   // 오브젝트의 얕은 복사-1
-  // var testA = {
-  //   'A' : 0,
-  //   'B' : '테스트',
-  //   'C' : new Date('2016-08-30 12:30:00'),
-  //   'D' : function(){alert('test')},
-  //   'E' : [0,1,2,3,4],
-  //   'F' : {
-  //     'FA' : 1
-  //   }
-  // }
-  // var testB = Object.assign({},testA);
-  // // var testB = Object.assign({},testA.F);
-  // testB.A = '테스트';
-  // // testB.F.FA = 'other value';
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB);
-  //
-  // Object.assign이란 객체를 합병하여 복사시켜주는 내장함수
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : new Date('2016-08-30 12:30:00'),
+    'D' : function(){alert('test')},
+    'E' : [0,1,2,3,4],
+    'F' : {
+      'FA' : 1
+    }
+  }
+  var testB = Object.assign({},testA);
+  // var testB = Object.assign({},testA.F);
+  testB.A = '테스트';
+  // testB.F.FA = 'other value';
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
+
+  Object.assign이란 객체를 합병하여 복사시켜주는 내장함수
 
 
 
   // 오브젝트의 얕은 복사-2
-  // function clone(obj) {
-  // 	if (obj === null || typeof(obj) !== 'object') // 타입이 object가 아닐경우는 바로 리턴
-  //   	return obj;
-  //
-  //   var copy = obj.constructor(); // obj의 타입을 새로운 변수의 타입으로 지정
-  //
-  //   for (var attr in obj) {
-  // 		if (obj.hasOwnProperty(attr)) {
-  //     	copy[attr] = obj[attr];
-  // 		}
-  //   }
-  //
-  //   return copy;
-  // }
-  //
-  // var testA = {
-  //   'A' : 0,
-  //   'B' : '테스트',
-  //   'C' : new Date('2016-08-30 12:30:00'),
-  //   'D' : function(){alert('test')},
-  //   'E' : [0,1,2,3,4],
-  //   'F' : {
-  //     'FA' : 1
-  //   }
-  // }
-  // var testB = clone(testA);
-  // testB.A = '테스트';
-  // // testB.F.FA = 'other value';
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB);
+  function clone(obj) {
+  	if (obj === null || typeof(obj) !== 'object') // 타입이 object가 아닐경우는 바로 리턴
+    	return obj;
+
+    var copy = obj.constructor(); // obj의 타입을 새로운 변수의 타입으로 지정
+
+    for (var attr in obj) {
+  		if (obj.hasOwnProperty(attr)) {
+      	copy[attr] = obj[attr];
+  		}
+    }
+
+    return copy;
+  }
+
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : new Date('2016-08-30 12:30:00'),
+    'D' : function(){alert('test')},
+    'E' : [0,1,2,3,4],
+    'F' : {
+      'FA' : 1
+    }
+  }
+  var testB = clone(testA);
+  testB.A = '테스트';
+  // testB.F.FA = 'other value';
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
 
 
 
   // 오브젝트 얕은복사-3
-  // var testA = {
-  //   'A' : 0,
-  //   'B' : '테스트',
-  //   'C' : new Date('2016-08-30 12:30:00'),
-  //   'D' : function(){alert('test')},
-  //   'E' : [0,1,2,3,4],
-  //   'F' : {
-  //     'FA' : 1
-  //   }
-  // }
-  // var testB = $.extend({}, testA);
-  // testB.A = '테스트';
-  // // testB.F.FA = 'other value';
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB);
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : new Date('2016-08-30 12:30:00'),
+    'D' : function(){alert('test')},
+    'E' : [0,1,2,3,4],
+    'F' : {
+      'FA' : 1
+    }
+  }
+  var testB = $.extend({}, testA);
+  testB.A = '테스트';
+  // testB.F.FA = 'other value';
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
 
 
 
   // 오브젝트 깊은복사-1
-  // var testA = {
-  //   'A' : 0,
-  //   'B' : '테스트',
-  //   'C' : new Date('2016-08-30 12:30:00'),
-  //   'D' : function(){alert('test')},
-  //   'E' : [0,1,2,3,4],
-  //   'F' : {
-  //     'FA' : 1
-  //   }
-  // }
-  // var testB = $.extend(true, {}, testA);
-  // testB.A = '테스트';
-  // testB.F.FA = 'other value';
-  // testB.D();
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA.C);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB.C);
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : new Date('2016-08-30 12:30:00'),
+    'D' : function(){alert('test')},
+    'E' : [0,1,2,3,4],
+    'F' : {
+      'FA' : 1
+    }
+  }
+  var testB = $.extend(true, {}, testA);
+  testB.A = '테스트';
+  testB.F.FA = 'other value';
+  testB.D();
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA.C);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB.C);
 
 
 
   // 오브젝트 깊은복사-2
-  // var testA = {
-  //   'A' : 0,
-  //   'B' : '테스트',
-  //   'C' : new Date('2016-08-30 12:30:00'),
-  //   'D' : function(){alert('test')},
-  //   'E' : [0,1,2,3,4],
-  //   'F' : {
-  //     'FA' : 1
-  //   }
-  // }
-  // var testB = JSON.parse(JSON.stringify(testA));
-  // testB.A = '테스트';
-  // //testB.F.FA = 'other value';
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA.C);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB.C);
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : new Date('2016-08-30 12:30:00'),
+    'D' : function(){alert('test')},
+    'E' : [0,1,2,3,4],
+    'F' : {
+      'FA' : 1
+    }
+  }
+  var testB = JSON.parse(JSON.stringify(testA));
+  testB.A = '테스트';
+  //testB.F.FA = 'other value';
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA.C);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB.C);
 
 
 
   // 오브젝트 깊은복사-3
-  // function clone(obj) {
-  // 	if (obj === null || typeof(obj) !== 'object') // 타입이 object가 아닐경우는 바로 리턴
-  //   	return obj;
-  //
-  //   var copy = obj.constructor(); // obj의 타입을 새로운 변수의 타입으로 지정
-  //
-  //   for (var attr in obj) {
-  // 		if (obj.hasOwnProperty(attr)) {
-  //     	copy[attr] = clone(obj[attr]);
-  // 		}
-  //   }
-  //
-  //   return copy;
-  // }
-  //
-  // var testA = {
-  //   'A' : 0,
-  //   'B' : '테스트',
-  //   'C' : new Date('2016-08-30 12:30:00'),
-  //   'D' : function(){alert('test')},
-  //   'E' : [0,1,2,3,4],
-  //   'F' : {
-  //     'FA' : 1
-  //   }
-  // }
-  // var testB = clone(testA);
-  // testB.A = '테스트';
-  // testB.F.FA = 'other value';
-  //
-  // // testC = new Date(testB.C);
-  // // console.log('testC',testC);
-  // // console.log('testC type : ',typeof testC);
-  //
-  // console.log('testA',testA);
-  // console.log('testA type : ',typeof testA);
-  // console.log('testB',testB);
-  // console.log('testB type : ',typeof testB);
+  function clone(obj) {
+  	if (obj === null || typeof(obj) !== 'object') // 타입이 object가 아닐경우는 바로 리턴
+    	return obj;
+
+    var copy = obj.constructor(); // obj의 타입을 새로운 변수의 타입으로 지정
+
+    for (var attr in obj) {
+  		if (obj.hasOwnProperty(attr)) {
+      	copy[attr] = clone(obj[attr]);
+  		}
+    }
+
+    return copy;
+  }
+
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : new Date('2016-08-30 12:30:00'),
+    'D' : function(){alert('test')},
+    'E' : [0,1,2,3,4],
+    'F' : {
+      'FA' : 1
+    }
+  }
+  var testB = clone(testA);
+  testB.A = '테스트';
+  testB.F.FA = 'other value';
+
+  // testC = new Date(testB.C);
+  // console.log('testC',testC);
+  // console.log('testC type : ',typeof testC);
+
+  console.log('testA',testA);
+  console.log('testA type : ',typeof testA);
+  console.log('testB',testB);
+  console.log('testB type : ',typeof testB);
 
 
 
@@ -294,6 +271,25 @@
   console.log('testA type : ',typeof testA);
   console.log('testB',testB);
   console.log('testB type : ',typeof testB);
+
+
+
+  // 가변객체 불변객체
+  // var carname = new String('Hello');
+  // var carname2 = new String('Hello');
+  // var carname3 = 'Hello';
+  // // var carname = 'Hello';
+  // // var carname2 = 'Hello';
+  // console.log('carname : ', carname);
+  // console.log('carname2 : ', carname2);
+  // console.log('carname3 : ', carname3);
+  // console.log('carnameType : ', typeof carname);
+  // console.log('carnameType2 : ', typeof carname2);
+  // console.log('carname == carname2 : ', carname == carname2);
+  // console.log('carname === carname2 : ', carname == carname2);
+  // console.log('carname == \'Hello\' : ', carname == 'Hello');
+  // console.log('carname === \'Hello\' : ', carname === 'Hello');
+  // console.log('carname == carname3 : ', carname == carname3);
 
 
 
