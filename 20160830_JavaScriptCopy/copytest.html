@@ -73,16 +73,29 @@
   var testA = {
     'A' : 0,
     'B' : '테스트',
-    'C' : new Date('2016-08-30 12:30:00'),
-    'D' : function(){alert('test')},
-    'E' : [0,1,2,3,4],
-    'F' : {
-      'FA' : 1
+    'C' : function(test){alert('test')},
+    'D' : [0,1,2,3,4],
+
+    'E' : {
+      'EA' : 1,
+      'EB' : '안녕하세요',
+      'EC' : function(test2){alert('test2')},
+      'ED' : [4,3,2,1,0],
+      'EE' : {
+        EEA : 2
+      },
+      'EF' : new Date('2016-08-30 12:30:30'),
+      'EG' : new String('테스트2'),
+      'EH' : new Number(600)
     },
-    'G' : true
+
+    'F' : new Date('2016-08-30 12:30:30'),
+    'G' : new String('테스트'),
+    'H' : new Number(500)
   }
   var testB = testA;
-  testB.A = '테스트';
+  testB.A = 500;
+  testB.D[0] = 500;
 
   console.log('testA',testA);
   console.log('testB',testB);
@@ -95,18 +108,32 @@
   var testA = {
     'A' : 0,
     'B' : '테스트',
-    'C' : new Date('2016-08-30 12:30:00'),
-    'D' : function(){alert('test')},
-    'E' : [0,1,2,3,4],
-    'F' : {
-      'FA' : 1
+    'C' : function(test){alert('test')},
+    'D' : [0,1,2,3,4],
+
+    'E' : {
+      'EA' : 1,
+      'EB' : '안녕하세요',
+      'EC' : function(test2){alert('test2')},
+      'ED' : [4,3,2,1,0],
+      'EE' : {
+        EEA : 2
+      },
+      'EF' : new Date('2016-08-30 12:30:30'),
+      'EG' : new String('테스트2'),
+      'EH' : new Number(600)
     },
-    'G' : true
+
+    'F' : new Date('2016-08-30 12:30:30'),
+    'G' : new String('테스트'),
+    'H' : new Number(500)
   }
   var testB = Object.assign({},testA); // Object.assign이란 객체를 합병하여 복사시켜주는 내장함수 es6
-  // var testB = Object.assign({},testA.F);
-  testB.A = '테스트';
-  // testB.F.FA = 'other value';
+  // // testB.E = Object.assign({},testA.E);
+  testB.A = 500;
+  // testB.E.EA = 600;
+  // testB.E.EE.EEA = 600;
+  // testB.D[0] = 600;
 
   console.log('testA',testA);
   console.log('testB',testB);
@@ -123,9 +150,9 @@
     var copy = obj.constructor(); // obj의 타입을 새로운 변수의 타입으로 지정
 
     for (var attr in obj) {
-  		if (obj.hasOwnProperty(attr)) { // object에 지정된 이름의 속성이 있을경우 true 아니면 false (객체 프로퍼티(속성) 존재 여부)
+  		//if (obj.hasOwnProperty(attr)) { // object에 지정된 이름의 속성이 있을경우 true 아니면 false (객체 프로퍼티(속성) 존재 여부)
       	copy[attr] = obj[attr];
-  		}
+  		//}
     }
     return copy;
   }
@@ -133,17 +160,32 @@
   var testA = {
     'A' : 0,
     'B' : '테스트',
-    'C' : new Date('2016-08-30 12:30:00'),
-    'D' : function(){alert('test')},
-    'E' : [0,1,2,3,4],
-    'F' : {
-      'FA' : 1
+    'C' : function(test){alert('test')},
+    'D' : [0,1,2,3,4],
+
+    'E' : {
+      'EA' : 1,
+      'EB' : '안녕하세요',
+      'EC' : function(test2){alert('test2')},
+      'ED' : [4,3,2,1,0],
+      'EE' : {
+        EEA : 2
+      },
+      'EF' : new Date('2016-08-30 12:30:30'),
+      'EG' : new String('테스트2'),
+      'EH' : new Number(600)
     },
-    'G' : true
+
+    'F' : new Date('2016-08-30 12:30:30'),
+    'G' : new String('테스트'),
+    'H' : new Number(500)
   }
   var testB = clone(testA);
-  testB.A = '테스트';
-  // testB.F.FA = 'other value';
+  testB.E = clone(testA.E);
+  testB.A = 500;
+  testB.E.EA = 600;
+  testB.E.EE.EEA = 600;
+  testB.D[0] = 600;
 
   console.log('testA',testA);
   console.log('testB',testB);
@@ -156,17 +198,31 @@
   var testA = {
     'A' : 0,
     'B' : '테스트',
-    'C' : new Date('2016-08-30 12:30:00'),
-    'D' : function(){alert('test')},
-    'E' : [0,1,2,3,4],
-    'F' : {
-      'FA' : 1
+    'C' : function(test){alert('test')},
+    'D' : [0,1,2,3,4],
+
+    'E' : {
+      'EA' : 1,
+      'EB' : '안녕하세요',
+      'EC' : function(test2){alert('test2')},
+      'ED' : [4,3,2,1,0],
+      'EE' : {
+        EEA : 2
+      },
+      'EF' : new Date('2016-08-30 12:30:30'),
+      'EG' : new String('테스트2'),
+      'EH' : new Number(600)
     },
-    'G' : true
+
+    'F' : new Date('2016-08-30 12:30:30'),
+    'G' : new String('테스트'),
+    'H' : new Number(500)
   }
   var testB = $.extend({}, testA); // 객체를 합병 http://api.jquery.com/jQuery.extend/
-  testB.A = '테스트';
-  // testB.F.FA = 'other value';
+  testB.A = 500;
+  testB.E.EA = 600;
+  testB.E.EE.EEA = 600;
+  testB.D[0] = 600;
 
   console.log('testA',testA);
   console.log('testB',testB);
@@ -179,17 +235,31 @@
   var testA = {
     'A' : 0,
     'B' : '테스트',
-    'C' : new Date('2016-08-30 12:30:00'),
-    'D' : function(){alert('test')},
-    'E' : [0,1,2,3,4],
-    'F' : {
-      'FA' : 1
+    'C' : function(test){alert('test')},
+    'D' : [0,1,2,3,4],
+
+    'E' : {
+      'EA' : 1,
+      'EB' : '안녕하세요',
+      'EC' : function(test2){alert('test2')},
+      'ED' : [4,3,2,1,0],
+      'EE' : {
+        EEA : 2
+      },
+      'EF' : new Date('2016-08-30 12:30:30'),
+      'EG' : new String('테스트2'),
+      'EH' : new Number(600)
     },
-    'G' : true
+
+    'F' : new Date('2016-08-30 12:30:30'),
+    'G' : new String('테스트'),
+    'H' : new Number(500)
   }
   var testB = JSON.parse(JSON.stringify(testA)); // parse는 string을 json으로,  stringify는 json을 string으로
-  testB.A = '테스트';
-  //testB.F.FA = 'other value';
+  testB.A = 500;
+  testB.E.EA = 600;
+  testB.E.EE.EEA = 600;
+  testB.D[0] = 600;
 
   console.log('testA',testA);
   console.log('testB',testB);
@@ -217,17 +287,31 @@
   var testA = {
     'A' : 0,
     'B' : '테스트',
-    'C' : new Date('2016-08-30 12:30:00'),
-    'D' : function(){alert('test')},
-    'E' : [0,1,2,3,4],
-    'F' : {
-      'FA' : 1
+    'C' : function(test){alert('test')},
+    'D' : [0,1,2,3,4],
+
+    'E' : {
+      'EA' : 1,
+      'EB' : '안녕하세요',
+      'EC' : function(test2){alert('test2')},
+      'ED' : [4,3,2,1,0],
+      'EE' : {
+        EEA : 2
+      },
+      'EF' : new Date('2016-08-30 12:30:30'),
+      'EG' : new String('테스트2'),
+      'EH' : new Number(600)
     },
-    'G' : true
+
+    'F' : new Date('2016-08-30 12:30:30'),
+    'G' : new String('테스트'),
+    'H' : new Number(500)
   }
   var testB = clone(testA);
-  testB.A = '테스트';
-  testB.F.FA = 'other value';
+  testB.A = 500;
+  testB.E.EA = 600;
+  testB.E.EE.EEA = 600;
+  testB.D[0] = 600;
 
   // testC = new Date(testB.C);
   // console.log('testC',testC);
@@ -245,23 +329,36 @@
   var testA = {
     'A' : 0,
     'B' : '테스트',
-    'C' : new Date('2016-08-30 12:30:00'),
-    'D' : function(){alert('test')},
-    'E' : [0,1,2,3,4],
-    'F' : {
-      'FA' : 1
+    'C' : function(test){alert('test')},
+    'D' : [0,1,2,3,4],
+
+    'E' : {
+      'EA' : 1,
+      'EB' : '안녕하세요',
+      'EC' : function(test2){alert('test2')},
+      'ED' : [4,3,2,1,0],
+      'EE' : {
+        EEA : 2
+      },
+      'EF' : new Date('2016-08-30 12:30:30'),
+      'EG' : new String('테스트2'),
+      'EH' : new Number(600)
     },
-    'G' : true
+
+    'F' : new Date('2016-08-30 12:30:30'),
+    'G' : new String('테스트'),
+    'H' : new Number(500)
   }
-  var testB = $.extend(true, {}, testA);
-  testB.A = '테스트';
-  testB.F.FA = 'other value';
-  testB.D();
+  var testB = $.extend(true, {}, testA); // 객체를 합병 http://api.jquery.com/jQuery.extend/
+  testB.A = 500;
+  testB.E.EA = 600;
+  testB.E.EE.EEA = 600;
+  testB.D[0] = 600;
 
   console.log('testA',testA);
   console.log('testB',testB);
-  console.log('testA type : ',typeof testA.C);
-  console.log('testB type : ',typeof testB.C);
+  console.log('testA type : ',typeof testA);
+  console.log('testB type : ',typeof testB);
 
 
 
@@ -269,17 +366,31 @@
   var testA = {
     'A' : 0,
     'B' : '테스트',
-    'C' : new Date('2016-08-30 12:30:00'),
-    'D' : function(){alert('test')},
-    'E' : [0,1,2,3,4],
-    'F' : {
-      'FA' : 1
+    'C' : function(test){alert('test')},
+    'D' : [0,1,2,3,4],
+
+    'E' : {
+      'EA' : 1,
+      'EB' : '안녕하세요',
+      'EC' : function(test2){alert('test2')},
+      'ED' : [4,3,2,1,0],
+      'EE' : {
+        EEA : 2
+      },
+      'EF' : new Date('2016-08-30 12:30:30'),
+      'EG' : new String('테스트2'),
+      'EH' : new Number(600)
     },
-    'G' : true
+
+    'F' : new Date('2016-08-30 12:30:30'),
+    'G' : new String('테스트'),
+    'H' : new Number(500)
   }
   var testB = Object.clone(testA);
-  testB.A = '테스트';
-  testB.F.FA = 'other value';
+  testB.A = 500;
+  testB.E.EA = 600;
+  testB.E.EE.EEA = 600;
+  testB.D[0] = 600;
 
   // testC = new Date(testB.C);
   // console.log('testC',testC);
@@ -289,7 +400,6 @@
   console.log('testB',testB);
   console.log('testA type : ',typeof testA);
   console.log('testB type : ',typeof testB);
-
 
 
   // 가변객체 불변객체
