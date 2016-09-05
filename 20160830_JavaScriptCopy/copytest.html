@@ -402,6 +402,99 @@
   console.log('testB type : ',typeof testB);
 
 
+
+  // react-update < 얕은 복사
+  var testA = [
+    {
+      'A' : 0,
+      'B' : '테스트',
+      'C' : function(test){alert('test')},
+      'D' : [0,1,2,3,4],
+
+      'E' : {
+        'EA' : 1,
+        'EB' : '안녕하세요',
+        'EC' : function(test2){alert('test2')},
+        'ED' : [4,3,2,1,0],
+        'EE' : {
+          EEA : 2
+        },
+        'EF' : new Date('2016-08-30 12:30:30'),
+        'EG' : new String('테스트2'),
+        'EH' : new Number(600)
+      },
+
+      'F' : new Date('2016-08-30 12:30:30'),
+      'G' : new String('테스트'),
+      'H' : new Number(500)
+    },
+    0
+  ];
+  var testB = update(testA, {
+    $push : [{'A':0}]
+  });
+  var testC = update(testB, {
+    $push : [{'B':0}]
+  });
+  testB[1] = 500;
+  testB[2].A = 500;
+  testB[0].E.EA = 600;
+  testB[0].E.EE.EEA = 600;
+  testB[0].D[0] = 600;
+  console.log('testA',testA);
+  console.log('testB',testB);
+  console.log('testC',testC);
+  console.log('testA type : ',typeof testA);
+  console.log('testB type : ',typeof testB);
+  console.log('testC type : ',typeof testC);
+
+
+
+  // react-update < 얕은 복사
+  var testA = {
+    'A' : 0,
+    'B' : '테스트',
+    'C' : function(test){alert('test')},
+    'D' : [0,1,2,3,4],
+
+    'E' : {
+      'EA' : 1,
+      'EB' : '안녕하세요',
+      'EC' : function(test2){alert('test2')},
+      'ED' : [4,3,2,1,0],
+      'EE' : {
+        EEA : 2
+      },
+      'EF' : new Date('2016-08-30 12:30:30'),
+      'EG' : new String('테스트2'),
+      'EH' : new Number(600)
+    },
+
+    'F' : new Date('2016-08-30 12:30:30'),
+    'G' : new String('테스트'),
+    'H' : new Number(500)
+  }
+  var testB = Immutable.fromJS(testA);
+  testB = testB.set('A', 500);
+  var testB2 = testB.get('E');
+  testB2 = testB2.set('EA', 600);
+  // testB.A = 500;
+  // testB.E.EA = 600;
+  // testB.E.EE.EEA = 600;
+  // testB.D[0] = 600;
+
+  // testC = new Date(testB.C);
+  // console.log('testC',testC);
+  // console.log('testC type : ',typeof testC);
+
+  console.log('testA',testA);
+  console.log('testB',testB);
+  console.log('testB2',testB2);
+  console.log('testA type : ',typeof testA);
+  console.log('testB type : ',typeof testB);
+
+
+
   // 가변객체 불변객체
   // var carname = new String('Hello');
   // var carname2 = new String('Hello');
